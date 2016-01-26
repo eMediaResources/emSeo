@@ -1,0 +1,23 @@
+{%- macro title(title) -%}
+{% spaceless %}
+    {% if title | length -%}
+		<title>{{ title }}</title>
+    {% endif %}
+{% endspaceless %}
+{%- endmacro -%}
+
+{%- macro name(property, content) -%}
+{% spaceless %}
+    {% if content | length -%}
+		<meta name="{{ property }}" content="{{ content }}" />
+    {% endif %}
+{% endspaceless %}
+{%- endmacro -%}
+
+{%- macro property(property, content) -%}
+{% spaceless %}
+    {% if content | length -%}
+		<meta property="{{ property }}" content="{{ content }}" />
+    {% endif %}
+{% endspaceless %}
+{%- endmacro -%}

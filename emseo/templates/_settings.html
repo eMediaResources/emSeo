@@ -1,0 +1,22 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+	first: true,
+	label: "SEO Site Name"|t,
+	required: true,
+	id: 'siteName',
+	name: 'siteName',
+	instructions: "Custom Site Name"|t,
+	value: settings.siteName,
+	autofocus: true,
+	errors: settings.getErrors('siteName')
+}) }}
+
+{{ forms.textAreaField({
+	label: "Description"|t,
+	id: 'siteDescription',
+	name: 'siteDescription',
+	instructions: "Default Site Description Tag"|t,
+	value: settings.siteDescription,
+	errors: settings.getErrors('siteDescription')
+}) }}
