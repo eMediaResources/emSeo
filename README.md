@@ -16,8 +16,12 @@ To install emSEO, follow these steps:
 Your contact form template can look something like this:
 
 ```jinja
-{{ emSeo.seo | raw}}
+{{ craft.emseo.seo | raw }}
 ```
+### 1.0.1
+
+* fixed bug with seo description missing aded better descriptions
+
 ### 1.0.0
 
 * Initial release
