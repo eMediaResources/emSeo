@@ -43,7 +43,7 @@ class EmSeoService extends BaseApplicationComponent{
 
 		//Template output on the frontend
 		$oldPath = craft()->path->getTemplatesPath();
-		$newPath = craft()->path->getPluginsPath().'emSeo/templates';
+		$newPath = craft()->path->getPluginsPath().'emseo/templates';
 		craft()->path->setTemplatesPath($newPath);
 		$_html = craft()->templates->render('output', $data);
 		craft()->path->setTemplatesPath($oldPath);
