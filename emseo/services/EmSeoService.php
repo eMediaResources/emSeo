@@ -23,8 +23,8 @@ class EmSeoService extends BaseApplicationComponent{
 			}
 
 			//Check for entry description
-			if(!empty($element->seoDescription)){
-				$_description = $element->seoDescription;
+			if(!empty($element->seoDesc)){
+				$_description = $element->seoDesc;
 			} else {
 				$_description = $settings->siteDescription;
 			}
@@ -77,6 +77,7 @@ class EmSeoService extends BaseApplicationComponent{
 		$titleField->name = 'SEO Title';
 		$titleField->handle = 'seoTitle';
 		$titleField->translatable = true;
+		$titleField->instructions = "Optional, if you do not specify anything the entry title will be used. Remember that most search-engines use a maximum of 60 characters for the title.";
 		$titleField->type = 'PlainText';
 
 		if (craft()->fields->saveField($titleField)) {
@@ -91,13 +92,15 @@ class EmSeoService extends BaseApplicationComponent{
 
 		$descField = new FieldModel();
 		$descField->groupId = $group->id;
-		$descField->name = 'SEO Description';
+		$descField->name = 'SEO Meta Description';
 		$descField->handle = 'seoDesc';
 		$descField->translatable = true;
+		$descField->instructions = "Write a short sentence or two that sums up the entry (many search engines will display this in the search results)";
 		$descField->type = 'PlainText';
 		$descField->settings = array(
 			"multiline" => "1",
 			'initialRows' => "4",
+			'maxLength' => "160",
 			'columnType' => ColumnType::Text,
 		);
 

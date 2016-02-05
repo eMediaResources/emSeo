@@ -2,21 +2,20 @@
 
 {{ forms.textField({
 	first: true,
-	label: "SEO Site Name"|t,
-	required: true,
+	label: "Site Name"|t,
 	id: 'siteName',
 	name: 'siteName',
-	instructions: "Custom Site Name"|t,
+	instructions: "The name of your site; this name will appear after the Titles of your pages in the &lt;title&gt; tag."|t,
 	value: settings.siteName,
 	autofocus: true,
 	errors: settings.getErrors('siteName')
 }) }}
 
 {{ forms.textAreaField({
-	label: "Description"|t,
+	label: "SEO Meta Description"|t,
 	id: 'siteDescription',
 	name: 'siteDescription',
-	instructions: "Default Site Description Tag"|t,
+	instructions: "Default Meta Description"|t,
 	value: settings.siteDescription,
 	errors: settings.getErrors('siteDescription')
 }) }}
